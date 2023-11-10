@@ -1,0 +1,158 @@
+---
+title: "Reproducible science: Module 8"
+subtitle: "R Git and Github: The trio"
+author: "[Gbadamassi G.O. Dossa](dossa@xtbg.org.cn)"
+institute: "Xishuangbanna Tropical Botanical Garden, XTBG-CAS"
+date: "2022/6/30 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    #chakra: libs/remark-latest.min.js Able this if you want to make slide to work offline
+    #seal: false ## To set off the first slide renders by xaringan
+    nature:
+      #ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      #countdown: 60000
+      #autoplay: 30000
+      ## for highlighting use the following * at the beginning, or are wrapped in {{ }}, or at the end #<<
+      ## highlight.output = c(1, 3) means highlighting the first and third line.
+      # xaringan::summon_remark() to make slide work offline
+ ## https://bookdown.org/yihui/rmarkdown/xaringan-preview.html for more information        
+ ## Three dashes (---) for seperating slide
+ ## two dash (--) to introduce next line on a slide
+ ## One dash (-) for bullet point
+ ## .footnote[ AND PUT WHAT YOU WANT IN HERE]
+ ## <sup>A</sup> for putting A in upperscript. This html language
+ ## ![tidyverse logo](tidyverse.png)
+---
+
+class: center
+# Acknowledgements
+The content of this module are based on materials from:
+
+.pull-right[
+![Rob Schick](Rob Schick.jpg)
+]
+.pull-right[
+[Rob Schick's materials](https://nicholas.duke.edu/people/staff/schick-phd)
+]
+---
+class: center
+# Hard way of doing things is Git Bash
+.left[
+* Why shall we bother doing it hard?
+Simple because if ever R Studio fails, you know an alternative.
+The second reason is in presence of conflict you might have only one 
+option of doing it by hand.
+
+* I agree that the integration of R git and Github is powerful
+]
+
+---
+class: center
+# Requirements to link Git and Github
+.left[
+- Set the same email for both Git and Github
+
+- Set the same username (ideally) for both Git and Github
+
+- Make sure you configure R Studio to open Git Bash
+
+- Make sure you connect your computer/R Studio with Github 
+  Doing so will not only allow communication between Git and Github but 
+  also to allow clicking to automate actions in R studion
+
+]
+---
+class: center
+
+# How to link your computer to your github **securely**
+.left[
+You need to set an SSH Key. 
+
+Please follow instructions below.
+]
+
+---
+class: center
+# Setting up git in R Studio
+
+```{r, echo=FALSE,out.width='100%', fig.align='center', fig.cap='', include=TRUE}
+knitr::include_graphics('git github R studio ssh key1.png')
+```
+
+---
+class: center
+# Few basic git commands
+
+```{r, echo=FALSE,out.width='100%', fig.align='center', fig.cap='', include=TRUE}
+knitr::include_graphics('git github R studio ssh key2.png')
+```
+
+---
+class: center
+# How to create SSH key in R studio step 1
+```{r, echo=FALSE,out.width='100%', fig.align='center', fig.cap='', include=TRUE}
+knitr::include_graphics('git github R studio ssh key4.png')
+```
+
+---
+class: center
+
+# How to create SSH key in R studio step 2
+```{r, echo=FALSE,out.width='100%', fig.align='center', fig.cap='', include=TRUE}
+knitr::include_graphics('git github R studio ssh key5.png')
+```
+
+---
+class: center
+
+# How to create SSH key in R studio step 3
+```{r, echo=FALSE,out.width='100%', fig.align='center', fig.cap='', include=TRUE}
+knitr::include_graphics('git github R studio ssh key6.png')
+```
+
+
+---
+class: center
+
+# How to create SSH key in R studio step 4
+```{r, echo=FALSE,out.width='100%', fig.align='center', fig.cap='', include=TRUE}
+knitr::include_graphics('git github R studio ssh key7.png')
+```
+
+
+---
+class: center
+
+# How to create a new repository on github 
+```{r, echo=FALSE,out.width='100%', fig.align='center', fig.cap='', include=TRUE}
+knitr::include_graphics('git github R studio ssh key8.png')
+```
+
+---
+class: center
+
+# How to clone the repository in R studio
+```{r, echo=FALSE,out.width='100%', fig.align='center', fig.cap='', include=TRUE}
+knitr::include_graphics('git github R studio ssh key9.png')
+```
+
+---
+class: center
+
+# How R studio looks like repo is cloned
+```{r, echo=FALSE,out.width='100%', fig.align='center', fig.cap='', include=TRUE}
+knitr::include_graphics('git github R studio ssh key10.png')
+```
+---
+class: center, middle
+
+# Thank you for listening!
+Any questions now or email me at [**dossa@xtbg.org.cn**](http://people.ucas.edu.cn/~Dossa?language=en)
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](https://yihui.org/knitr/), and [R Markdown](https://rmarkdown.rstudio.com).
