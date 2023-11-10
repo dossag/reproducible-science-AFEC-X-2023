@@ -1,5 +1,5 @@
 ---
-title: "Reproducible science AFECX 2022"
+title: "Reproducible science AFECX 2023"
 description: "A four-day workshop on reproducible science"
 site: distill::distill_website
 ---
