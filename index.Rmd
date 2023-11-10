@@ -16,7 +16,7 @@ site: distill::distill_website
 # Basic info
 
 Who: [G.G.O Dossa](https://dossag.github.io/)  
-When: 9am-5:30 pm every day from November 11-14, 2022  
+When: 9am-5:30 pm every day from November 11-14, 2023  
 Where: [XTBG](http://english.xtbg.cas.cn/)  
 <!-- Syllabus: [click here](syllabus.html)   -->
 <!-- Upcoming Modules and assignments: [click here](schedule.html)   -->
