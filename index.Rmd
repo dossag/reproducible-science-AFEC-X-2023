@@ -95,7 +95,7 @@ Also kindly read the two following documents prior to start of the workshop: (i)
 
 ## Corrections {.appendix}
 
-If you see mistakes or want to suggest changes, please [create an issue](https://dossag.github.io/reproducible-science-XTBG-2022/) on the source repository.
+If you see mistakes or want to suggest changes, please [create an issue](https://dossag.github.io/reproducible-science-AFEC-X-2023/) on the source repository.
 
 ## Reuse {.appendix}
 
