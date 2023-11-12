@@ -3,7 +3,7 @@ title: "Reproducible science: Module2"
 subtitle: "Bridging the gap among actors"
 author: "[Gbadamassi G.O. Dossa](dossa@xtbg.org.cn)"
 institute: "Xishuangbanna Tropical Botanical Garden, XTBG-CAS"
-date: "2021/09/20 (updated: `r Sys.Date()`)"
+date: "Updated on `r Sys.Date()` (created on 2021-09-13)"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -227,7 +227,7 @@ class: center
 ---
 class: center
 # Does reproducibility consume more time?
-```{r, echo=FALSE,out.width='80%', fig.align='center', fig.cap='Reproducibilit equals effecient use of time', include=TRUE, results="hold"}
+```{r, echo=FALSE,out.width='80%', fig.align='center', fig.cap='Reproducibility equals effecient use of time', include=TRUE, results="hold"}
 knitr::include_graphics('time-saving.png')
 ```
 

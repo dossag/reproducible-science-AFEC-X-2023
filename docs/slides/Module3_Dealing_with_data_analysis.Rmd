@@ -3,7 +3,7 @@ title: "Reproducible science: Module 3"
 subtitle: "Dealing with data: Tidyverse"
 author: "[Gbadamassi G.O. Dossa](dossa@xtbg.org.cn)"
 institute: "Xishuangbanna Tropical Botanical Garden, XTBG-CAS"
-date: "2021/09/25 (updated: `r Sys.Date()`)"
+date: "Updated on `r Sys.Date()` (created on 2021-09-13)"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -49,11 +49,11 @@ Main characteristics of a tidy dataset:
 
 - the dataset is [tibble](https://tibble.tidyverse.org/);
 
-- measured varaiable as a column;
+- measured variable as a column;
 
 - an observation represents a row with each value is in a different cell.
 
-[**tidyverse**](https://www.tidyverse.org/) consits of a compilation of r packages for data analysis.
+[**tidyverse**](https://www.tidyverse.org/) consists of a compilation of r packages for data analysis.
 ]
 ![tidyverse tibbles](img/Variable observation and measurement.png)
 ```{r, echo=FALSE,out.width='10%', fig.align='right', fig.cap='', include=TRUE}
@@ -144,7 +144,7 @@ class: center
 4. Communicate]
 <small>If these steps happen at multiple software then errors are highly inevitable.</small>
 
-```{r, echo=FALSE,out.width='60%', fig.align='center', fig.cap='Reproducibilit equals effecient use of time', include=TRUE, results="hold"}
+```{r, echo=FALSE,out.width='60%', fig.align='center', fig.cap='Reproducibility equals effecient use of time', include=TRUE, results="hold"}
 knitr::include_graphics('img/workflow in data analysis.png')
 ```
 
@@ -152,14 +152,14 @@ knitr::include_graphics('img/workflow in data analysis.png')
 ---
 class: center
 # Tidyverse saves: same flowchart in tidyverse
-```{r, echo=FALSE,out.width='80%', fig.align='center', fig.cap='Reproducibilit equals effecient use of time', include=TRUE, results="hold"}
+```{r, echo=FALSE,out.width='80%', fig.align='center', fig.cap='Reproducibility equals effecient use of time', include=TRUE, results="hold"}
 knitr::include_graphics('img/workflow data analysis within tidyverse.png')
 ```
 
 ---
 class: center
 
-# Practice in tidyverse “Use twitter to predict citation rate”
+# Practice in tidyverse with *“Twitter predicts citation rates of ecological research”*
 ![Twitter exercice front page](img/Twitter exercice front page.png)
 .left[
 We will use an existing data supporting the [above publication](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0166570) to learn some functions within **tidyverse**.
@@ -192,7 +192,7 @@ class: center
 
 # Import data
 .left[
-```{r, twittercsv，out.width="80%", message=FALSE, Warnings=FALSE, results="hide"}
+```{r, twittercsv,out.width="80%", message=FALSE, Warnings=FALSE, results="hide"}
 
 # Set the url from where to download the data
 url<-"https://doi.org/10.1371/journal.pone.0166570.s001"
@@ -212,7 +212,7 @@ class: center
 # Import data
 
 .left[
-```{r, datoverview，out.width="80%", include=TRUE, Warnings=FALSE, results="hold"}
+```{r, datoverview,out.width="80%", include=TRUE, Warnings=FALSE, results="hold"}
 citations_raw
 ```
 ]

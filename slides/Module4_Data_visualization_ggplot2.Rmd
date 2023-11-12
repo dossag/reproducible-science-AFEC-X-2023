@@ -3,7 +3,7 @@ title: "Reproducible science: Module 4"
 subtitle: "Data visualization in Tidyverse: the power of ggplot2"
 author: "[Gbadamassi G.O. Dossa](dossa@xtbg.org.cn)"
 institute: "Xishuangbanna Tropical Botanical Garden, XTBG-CAS"
-date: "2021/09/28 (updated: `r Sys.Date()`)"
+date: "Updated on `r Sys.Date()` (created on 2021-09-13)"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -396,13 +396,12 @@ histo4<-citations_ecology %>%
 histo4
 ```
 ]
-
 ---
 class: center
 # Histograms but group this by specific variable
 .left[
 Here we want to have the histogram by journal.
-```{r, histogram5,out.width='30%', message=FALSE, warning=FALSE}
+```{r, histogram5,out.width='20%', message=FALSE, warning=FALSE}
 histo5<-citations_ecology %>%
   ggplot() +
   aes(x = nbtweets) +
@@ -414,6 +413,14 @@ histo5<-citations_ecology %>%
 histo5
 ```
 ]
+---
+class: center
+# Histograms but group this by specific variable
+Here we want to have the histogram by journal.
+```{r, histogram5fulpage, out.width='50%',echo=FALSE, message=FALSE, warning=FALSE}
+histo5
+```
+
 ---
 class: center
 # Boxplots

@@ -3,7 +3,7 @@ title: "Reproducible science workshop: Module6"
 subtitle: "Markdown"
 author: "[Gbadamassi G.O. Dossa](dossa@xtbg.org.cn)"
 institute: "Xishuangbanna Tropical Botanical Garden, XTBG-CAS"
-date: "2021/10/1 (updated: `r Sys.Date()`)"
+date: "Updated on `r Sys.Date()` (created on 2021-09-13)"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -279,6 +279,26 @@ class: inverse, center, middle
 
 .center[![](assets/img/figheightfigwidth.png)]
 
+---
+# message
+
+## message= TRUE
+
+- `message = TRUE` allows messages to appear in output
+
+```{r, message= TRUE, echo=TRUE, warning=TRUE}
+library(ape)
+```
+---
+# message
+
+## message= FALSE
+
+- `message = FALSE` prevents messages appearing in output
+
+```{r, message= FALSE, echo=TRUE, warning=TRUE}
+library(ape)
+```
 
 ---
 # message
@@ -407,7 +427,7 @@ class: inverse, center, middle
 
 --
 <ol>
-<li> Put references in a plain text file with the extension **.bib**, in **BibTex** format (my advice: use [Zotero](https://www.zotero.org))
+<li> Put references in a plain text file with the extension **.bib**, in **BibTex** format (People's advice: use [Zotero](https://www.zotero.org), my own advice use [Mendeley](https://www.mendeley.com/))
 </ol>
 ```bibtex
 *@article{Shea2014,
