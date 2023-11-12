@@ -56,7 +56,7 @@ c. Filter out penguins for which sex is missing.
 
 d. Select variables species, island, bill_length_mm and body_mass_g.  
 
-e. Store the new dataset in a dat object.  
+e. Store the new dataset in a data object.  
 
 ---
 
