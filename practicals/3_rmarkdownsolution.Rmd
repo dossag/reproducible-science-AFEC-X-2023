@@ -24,7 +24,7 @@ The content of this module are based on materials from:
 
 ## Motivation
 
-In this section, we **explore** the data from package `palmerpenguins`. A recent publication from the researcher, Dr Kristen Gorman, who shared the data is @Connors2020.
+In this section, we **explore** the data from package `palmerpenguins`. A recent publication from the researcher, Dr Kristen Gorman, who shared the data is @Connors2020 @[@Satchell2009].
 
 ```{r echo = FALSE}
 library(palmerpenguins)
