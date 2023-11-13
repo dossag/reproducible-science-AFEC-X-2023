@@ -39,6 +39,9 @@ The content of this module are based on materials from:
 
 .tiny-font[
 ```{r}
+#read libraries
+library(palmerpenguins)
+library(tidyverse)
 penguins # display data
 glimpse(penguins)
 summary(penguins)
@@ -48,7 +51,7 @@ summary(penguins)
 ---
 
 ## Question 1a 
-
+a. Display the data `penguins`.  
 .tiny-font[
 ```{r}
 penguins %>% glimpse() # display data
@@ -58,6 +61,10 @@ penguins %>% glimpse() # display data
 ---
 
 ## Question 1b
+b. Make sure you understand the columns we have in this dataset.
+c. Filter out penguins for which sex is missing. 
+d. Select variables species, island, bill_length_mm and body_mass_g. 
+e. Store the new dataset in a dat object. 
 
 ```{r}
 dat <- penguins %>%
@@ -83,6 +90,8 @@ glimpse(dat2)
 ---
 
 ## Question 2a
+a. How many penguins do we have in the dataset? 
+
 
 .tiny-font[
 ```{r}
@@ -93,9 +102,13 @@ dat # nb of penguins
 ---
 
 ## Questions 2b and 2d
+b. How many species? 
+d. Count the number of penguins per species.
 
 ```{r}
 # nb of species, and penguins per species
+glimpse(dat)
+levels(dat$species)
 dat %>% count(species) 
 summary(dat)
 ```
@@ -103,6 +116,8 @@ summary(dat)
 ---
 
 ## Questions 2b and 2d
+b. How many species? 
+d. Count the number of penguins per species.
 
 ```{r}
 dat %>% count(species, sort = TRUE) # idem, arranged by n
@@ -112,6 +127,7 @@ dat %>% count(species, sort = TRUE) # idem, arranged by n
 ---
 
 ## Question 2c
+c. How many islands? 
 
 ```{r}
 dat %>% count(island) # nb of island, and penguins per island
@@ -121,6 +137,7 @@ dat %>% count(island) # nb of island, and penguins per island
 ---
 
 ## Question 2e
+e. Count the number of penguins per species and per island.
 
 ```{r}
 # penguins per species and island
@@ -133,19 +150,25 @@ dat %>% count(species, island)
 ---
 
 ## Question 3a: mean body mass
+a. Calculate the overall mean body mass.
 
 .tiny-font[
 ```{r}
 # option 1
-dat %>%
+mean(penguins$body_mass_g) # Gives NA because the original data has missing values
+mean(dat$body_mass_g)# here no more NA becuse we filtered out NA
+a<-dat %>%
   mutate(mean_bm = mean(body_mass_g))
-
+glimpse(dat)
+glimpse(a)
+a
 ```
 ]
 
 ---
 
 ## Question 3a: mean body mass
+
 
 ```{r}
 # option 2
@@ -157,6 +180,7 @@ dat %>%
 ---
 
 ## Question 3b: mean body mass per species
+b. Calculate the mean body mass for each species.
 
 .tiny-font[
 ```{r}
@@ -172,7 +196,7 @@ dat %>%
 ---
 
 ## Question 3b: mean body mass per species
-
+b. Calculate the mean body mass for each species.
 ```{r}
 # option 2
 dat %>% 
@@ -184,6 +208,7 @@ dat %>%
 ---
 
 ## Question 3c: mean traits
+c. Calculate the mean of both traits bill length and body mass measured for each species.
 
 ```{r}
 # all at once, through column selection
@@ -200,7 +225,19 @@ dat %>%
 
 ```{r}
 # all at once, through column format selection
+glimpse(dat)
+dat3<-penguins%>%
+  filter(!is.na(sex))%>%
+  select(species, island, sex, bill_length_mm, body_mass_g)
+glimpse(dat3)
 dat %>% 
   group_by(species) %>% 
+  summarize(across(where(is.numeric), mean))
+dat3%>%
+  group_by(species)%>%
+  summarize(across(sex:body_mass_g, mean))
+
+dat3%>%
+  group_by(species)%>%
   summarize(across(where(is.numeric), mean))
 ```

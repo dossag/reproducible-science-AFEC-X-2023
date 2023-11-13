@@ -1,7 +1,7 @@
 ---
 title: "Writing reproducible documents"
 author: "[Gbadamassi G.O. Dossa](dossa@xtbg.org.cn)"
-date: "last updated: `r Sys.Date()`"
+date: "Updated on `r Sys.Date()` (created on 2021-09-13)"
 output:
   xaringan::moon_reader:
     css: [default, "slides-theme.css"]
@@ -35,7 +35,7 @@ These data have been collected and shared by [Dr. Kristen Gorman](https://www.ua
 
 The package was built by Drs Allison Horst and Alison Hill, check out the [official website](https://allisonhorst.github.io/palmerpenguins/). 
 
-The package `palmerpenguins` has two datasets. 
+The package `palmerpenguins` has two datasets. **End note** remember to ask for *mabiblio.bib file* and *lter_penguins.png*
 
 ```{r showdata}
 library(palmerpenguins)
@@ -132,7 +132,12 @@ For this exercise, we're gonna use the `penguins` dataset.
 * Change the default citation format (Chicago style) into the The American Naturalist format. It can be found here  <https://www.zotero.org/styles>. To do so, add `csl: the-american-naturalist.csl` in the YAML.   
 
 ---
-
 ## Question 8
+
+Please display the photo of the penguins species (look for the file names **lter_penguins.png**) at the end of your document or if you prefer display your own photo instead.
+
+---
+
+## Question 9
 
 * Build your report in html, pdf and docx format. `r emo::ji("tada")`    

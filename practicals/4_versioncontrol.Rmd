@@ -1,7 +1,7 @@
 ---
 title: "Version control"
 author: "[Gbadamassi G.O. Dossa](dossa@xtbg.org.cn)"
-date: "last updated: `r Sys.Date()`"
+date: "Updated on `r Sys.Date()` (created on 2021-09-13)"
 output:
   xaringan::moon_reader:
     css: [default, "slides-theme.css"]

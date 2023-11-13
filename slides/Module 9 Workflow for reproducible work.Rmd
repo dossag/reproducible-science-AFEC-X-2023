@@ -3,7 +3,7 @@ title: "Reproducible science: Module 9"
 subtitle: "Workflow for reproducible work: Project"
 author: "[Gbadamassi G.O. Dossa](dossa@xtbg.org.cn)"
 institute: "Xishuangbanna Tropical Botanical Garden, XTBG-CAS"
-date: "2021/10/22 (updated: `r Sys.Date()`)"
+date: "Updated on `r Sys.Date()` (created on 2021-09-13)"
 output:
   xaringan::moon_reader:
     lib_dir: libs

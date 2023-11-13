@@ -1,7 +1,7 @@
 ---
 title: "Data visualisation - solutions"
 author: "[Gbadamassi G.O. Dossa](dossa@xtbg.org.cn)"
-date: "last updated: `r Sys.Date()`"
+date: "Updated on `r Sys.Date()` (created on 2021-09-13)"
 output:
   xaringan::moon_reader:
     css: [default, "slides-theme.css"]
@@ -35,9 +35,12 @@ The content of this module are based on materials from:
 
 ---
 ## Question 1a: histogram of body mass
+a. Build a histogram of body mass.
 
 .small-font[
 ```{r question1a, eval = FALSE}
+library(palmerpenguins)
+library(tidyverse) # instead reading or load tidyverse you can load directly ggplot2.
 penguins %>%
   ggplot() +
   aes(x = body_mass_g) + 
@@ -54,6 +57,7 @@ penguins %>%
 ---
 
 ## Question 1b: a color per species
+b. Fill in histogram with a color per species.
 
 .small-font[
 ```{r question1b, eval = FALSE}
@@ -61,6 +65,7 @@ dossa1<-penguins %>%
   ggplot() +
   aes(x = body_mass_g) + 
   geom_histogram(aes(fill = species))
+dossa1
 ```
 ]
 
@@ -74,6 +79,7 @@ dossa1<-penguins %>%
 
 
 ## Question 1c: darkorange, purple and cyan4
+c. Change the color by default to darkorange, purple and cyan4.
 
 .small-font[
 ```{r question1c, eval = FALSE}
@@ -96,6 +102,7 @@ penguins %>%
 
 
 ## Question 1d: adjust transparency
+d. Adjust transparency for all three histograms.
 
 .small-font[
 ```{r question1d, eval = FALSE}
@@ -104,11 +111,29 @@ penguins %>%
   aes(x = body_mass_g) + 
   geom_histogram(aes(fill = species), alpha = 0.5) +
   scale_fill_manual(values = c("darkorange","purple","cyan4")) 
+# Note that transparency does not work on histogram the way we expected on density plot.
 ```
 ]
 
 .center[
 ```{r question1d, echo = FALSE, fig.width = 5.5, fig.asp = 0.618, dev = "svg"}
+```
+]
+----
+d. Adjust transparency for all three density plots.
+
+.small-font[
+```{r question1d_density, eval = FALSE}
+penguins %>%
+  ggplot() +
+  aes(x = body_mass_g) + 
+  geom_density(aes(fill = species), alpha = 0.5) +
+  scale_fill_manual(values = c("darkorange","purple","cyan4")) 
+```
+]
+
+.center[
+```{r question1d_density, echo = FALSE, fig.width = 5.5, fig.asp = 0.618, dev = "svg"}
 ```
 ]
 
@@ -117,6 +142,7 @@ penguins %>%
 
 
 ## Question 1e: add titles
+e. Add a title to the axes, the legend and the figure.
 
 .pull-left.tiny-font[
 ```{r question1e, eval = FALSE}
@@ -147,6 +173,7 @@ penguins %>%
 
 
 ## Question 1f: change theme
+f. Change the theme used by default.    
 
 .pull-left.tiny-font[
 ```{r question1f, eval = FALSE}
@@ -162,7 +189,8 @@ penguins %>%
        y = "Frequency",
        title = "Penguin body mass",
        fill = "Penguin species") +
-  theme_minimal()
+  theme_minimal() # here I used theme_minimal() you can use other as you wish.
+
 ```
 ]
 
@@ -173,9 +201,38 @@ penguins %>%
 ]
 
 ---
+f. Change the theme used by default.    
+
+.pull-left.tiny-font[
+
+```{r question1f_classic, eval = FALSE}
+penguins %>%
+  ggplot() +
+  aes(x = body_mass_g) + 
+  geom_histogram(aes(fill = species), 
+                 alpha = 0.5) +
+  scale_fill_manual(values = c("darkorange",
+                               "purple",
+                               "cyan4")) +
+  labs(x = "Body mass (g)",
+       y = "Frequency",
+       title = "Penguin body mass",
+       fill = "Penguin species") +
+  theme_classic()
+
+```
+]
+
+
+.pull-right[
+```{r question1f_classic, echo = FALSE, fig.width = 5.5, fig.asp = 0.618, dev = "svg"}
+```
+]
+---
 
 
 ## Question 1g: split by sex
+g. Do a-f for males and females and display on same figure.
 
 .pull-left.tiny-font[
 ```{r question1g, eval = FALSE}
@@ -211,6 +268,7 @@ penguins %>%
 
 
 ## Question 2a: scatter plot
+a. Build a scatter plot of body mass with respect to flipper length.
 
 .tiny-font[
 ```{r question2a, eval = FALSE}
@@ -234,6 +292,7 @@ penguins %>%
 
 
 ## Question 2b: species-specific shapes
+b. Consider a shape for the points different for each species. Increase point size and adjust transparency.
 
 .pull-left.tiny-font[
 ```{r question2b, eval = FALSE}
@@ -258,6 +317,7 @@ penguins %>%
 
 
 ## Question 2c: species-specific colors
+c. Consider a color for the points different for each species. Increase point size and adjust transparency. 
 
 .pull-left.tiny-font[
 ```{r question2c, eval = FALSE}
@@ -266,7 +326,7 @@ penguins %>%
   aes(x = flipper_length_mm,
       y = body_mass_g) +
   geom_point(aes(color = species),
-             size = 3,
+             size = 5,
              alpha = 0.8) +
   theme_minimal()
 ```
@@ -282,6 +342,7 @@ penguins %>%
 ---
 
 ## Question 2d: species-specific shapes and colors
+d. Combine b-c.    
 
 .pull-left.tiny-font[
 ```{r question2d, eval = FALSE}
@@ -291,7 +352,7 @@ penguins %>%
       y = body_mass_g) +
   geom_point(aes(color = species,
                  shape = species),
-             size = 3,
+             size = 4,
              alpha = 0.8) +
   theme_minimal()
 ```
@@ -308,6 +369,7 @@ penguins %>%
 
 
 ## Question 2e: add titles
+e. Change colors to darkorange, purple and cyan4. Add titles to axes, legend and figure.
 
 .tiny-font[
 ```{r question2e, eval = FALSE}
@@ -317,8 +379,8 @@ penguins %>%
       y = body_mass_g) +
   geom_point(aes(color = species, 
                  shape = species),
-             size = 3,
-             alpha = 0.8) +
+                 size= 4,
+                 alpha = 0.8) +
   scale_color_manual(values = c("darkorange","purple","cyan4")) +
   labs(title = "Penguin body mass wrt flipper length",
        subtitle = "for Adelie, Chinstrap and Gentoo species",

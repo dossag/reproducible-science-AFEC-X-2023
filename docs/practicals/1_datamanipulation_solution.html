@@ -45,6 +45,9 @@ The content of this module are based on materials from:
 .tiny-font[
 
 ```r
+#read libraries
+library(palmerpenguins)
+library(tidyverse)
 penguins # display data
 ```
 
@@ -110,7 +113,7 @@ summary(penguins)
 ---
 
 ## Question 1a 
-
+a. Display the data `penguins`.  
 .tiny-font[
 
 ```r
@@ -134,6 +137,10 @@ penguins %&gt;% glimpse() # display data
 ---
 
 ## Question 1b
+b. Make sure you understand the columns we have in this dataset.
+c. Filter out penguins for which sex is missing. 
+d. Select variables species, island, bill_length_mm and body_mass_g. 
+e. Store the new dataset in a dat object. 
 
 
 ```r
@@ -179,6 +186,8 @@ glimpse(dat2)
 ---
 
 ## Question 2a
+a. How many penguins do we have in the dataset? 
+
 
 .tiny-font[
 
@@ -207,10 +216,33 @@ dat # nb of penguins
 ---
 
 ## Questions 2b and 2d
+b. How many species? 
+d. Count the number of penguins per species.
 
 
 ```r
 # nb of species, and penguins per species
+glimpse(dat)
+```
+
+```
+## Rows: 333
+## Columns: 4
+## $ species        &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie,…
+## $ island         &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, …
+## $ bill_length_mm &lt;dbl&gt; 39.1, 39.5, 40.3, 36.7, 39.3, 38.9, 39.2, 41.1, 38.6, 3…
+## $ body_mass_g    &lt;int&gt; 3750, 3800, 3250, 3450, 3650, 3625, 4675, 3200, 3800, 4…
+```
+
+```r
+levels(dat$species)
+```
+
+```
+## [1] "Adelie"    "Chinstrap" "Gentoo"
+```
+
+```r
 dat %&gt;% count(species) 
 ```
 
@@ -240,6 +272,8 @@ summary(dat)
 ---
 
 ## Questions 2b and 2d
+b. How many species? 
+d. Count the number of penguins per species.
 
 
 ```r
@@ -259,6 +293,7 @@ dat %&gt;% count(species, sort = TRUE) # idem, arranged by n
 ---
 
 ## Question 2c
+c. How many islands? 
 
 
 ```r
@@ -278,6 +313,7 @@ dat %&gt;% count(island) # nb of island, and penguins per island
 ---
 
 ## Question 2e
+e. Count the number of penguins per species and per island.
 
 
 ```r
@@ -314,13 +350,58 @@ dat %&gt;% count(species, island)
 ---
 
 ## Question 3a: mean body mass
+a. Calculate the overall mean body mass.
 
 .tiny-font[
 
 ```r
 # option 1
-dat %&gt;%
+mean(penguins$body_mass_g) # Gives NA because the original data has missing values
+```
+
+```
+## [1] NA
+```
+
+```r
+mean(dat$body_mass_g)# here no more NA becuse we filtered out NA
+```
+
+```
+## [1] 4207.057
+```
+
+```r
+a&lt;-dat %&gt;%
   mutate(mean_bm = mean(body_mass_g))
+glimpse(dat)
+```
+
+```
+## Rows: 333
+## Columns: 4
+## $ species        &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie,…
+## $ island         &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, …
+## $ bill_length_mm &lt;dbl&gt; 39.1, 39.5, 40.3, 36.7, 39.3, 38.9, 39.2, 41.1, 38.6, 3…
+## $ body_mass_g    &lt;int&gt; 3750, 3800, 3250, 3450, 3650, 3625, 4675, 3200, 3800, 4…
+```
+
+```r
+glimpse(a)
+```
+
+```
+## Rows: 333
+## Columns: 5
+## $ species        &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie,…
+## $ island         &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, …
+## $ bill_length_mm &lt;dbl&gt; 39.1, 39.5, 40.3, 36.7, 39.3, 38.9, 39.2, 41.1, 38.6, 3…
+## $ body_mass_g    &lt;int&gt; 3750, 3800, 3250, 3450, 3650, 3625, 4675, 3200, 3800, 4…
+## $ mean_bm        &lt;dbl&gt; 4207.057, 4207.057, 4207.057, 4207.057, 4207.057, 4207.…
+```
+
+```r
+a
 ```
 
 ```
@@ -346,6 +427,7 @@ dat %&gt;%
 ## Question 3a: mean body mass
 
 
+
 ```r
 # option 2
 dat %&gt;%
@@ -363,6 +445,7 @@ dat %&gt;%
 ---
 
 ## Question 3b: mean body mass per species
+b. Calculate the mean body mass for each species.
 
 .tiny-font[
 
@@ -397,7 +480,7 @@ dat %&gt;%
 ---
 
 ## Question 3b: mean body mass per species
-
+b. Calculate the mean body mass for each species.
 
 ```r
 # option 2
@@ -419,6 +502,7 @@ dat %&gt;%
 ---
 
 ## Question 3c: mean traits
+c. Calculate the mean of both traits bill length and body mass measured for each species.
 
 
 ```r
@@ -446,8 +530,68 @@ dat %&gt;%
 
 ```r
 # all at once, through column format selection
+glimpse(dat)
+```
+
+```
+## Rows: 333
+## Columns: 4
+## $ species        &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie,…
+## $ island         &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, …
+## $ bill_length_mm &lt;dbl&gt; 39.1, 39.5, 40.3, 36.7, 39.3, 38.9, 39.2, 41.1, 38.6, 3…
+## $ body_mass_g    &lt;int&gt; 3750, 3800, 3250, 3450, 3650, 3625, 4675, 3200, 3800, 4…
+```
+
+```r
+dat3&lt;-penguins%&gt;%
+  filter(!is.na(sex))%&gt;%
+  select(species, island, sex, bill_length_mm, body_mass_g)
+glimpse(dat3)
+```
+
+```
+## Rows: 333
+## Columns: 5
+## $ species        &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie,…
+## $ island         &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, …
+## $ sex            &lt;fct&gt; male, female, female, female, male, female, male, femal…
+## $ bill_length_mm &lt;dbl&gt; 39.1, 39.5, 40.3, 36.7, 39.3, 38.9, 39.2, 41.1, 38.6, 3…
+## $ body_mass_g    &lt;int&gt; 3750, 3800, 3250, 3450, 3650, 3625, 4675, 3200, 3800, 4…
+```
+
+```r
 dat %&gt;% 
   group_by(species) %&gt;% 
+  summarize(across(where(is.numeric), mean))
+```
+
+```
+## # A tibble: 3 × 3
+##   species   bill_length_mm body_mass_g
+##   &lt;fct&gt;              &lt;dbl&gt;       &lt;dbl&gt;
+## 1 Adelie              38.8       3706.
+## 2 Chinstrap           48.8       3733.
+## 3 Gentoo              47.6       5092.
+```
+
+```r
+dat3%&gt;%
+  group_by(species)%&gt;%
+  summarize(across(sex:body_mass_g, mean))
+```
+
+```
+## # A tibble: 3 × 4
+##   species     sex bill_length_mm body_mass_g
+##   &lt;fct&gt;     &lt;dbl&gt;          &lt;dbl&gt;       &lt;dbl&gt;
+## 1 Adelie       NA           38.8       3706.
+## 2 Chinstrap    NA           48.8       3733.
+## 3 Gentoo       NA           47.6       5092.
+```
+
+```r
+dat3%&gt;%
+  group_by(species)%&gt;%
   summarize(across(where(is.numeric), mean))
 ```
 

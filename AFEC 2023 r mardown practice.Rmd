@@ -1,0 +1,15 @@
+---
+title: "Untitled"
+author: "Gbadamassi G.O. Dossa"
+date: "2023-11-13"
+output: 
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# AFEC-X 2023 students
+
+Yesterday, we finished our class, 30 minutes earlier. **The participants were happy** 
