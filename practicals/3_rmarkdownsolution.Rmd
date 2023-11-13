@@ -3,8 +3,6 @@ title: "Data exploration using the palmerpenguins dataset"
 author: "[Gbadamassi G.O. Dossa](dossa@xtbg.org.cn)"
 date: "Updated on `r Sys.Date()` (created on 2021-09-13)"
 output:
-  word_document: default
-  pdf_document: default
   html_document: default
 bibliography: mabiblio.bib # For putting the file containing bibliography (.bib file)# Demonnstrate how one could get this file with Mendeley or online
 
@@ -12,7 +10,7 @@ csl: the-american-naturalist.csl # This is the citation style, you can either ge
 ---
 
 ```{r setup, include = FALSE}
-knitr::opts_chunk$set(echo = TRUE, message = FALSE)
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning=FALSE)
 ```
 
 # Acknowledgements
@@ -24,7 +22,8 @@ The content of this module are based on materials from:
 
 ## Motivation
 
-In this section, we **explore** the data from package `palmerpenguins`. A recent publication from the researcher, Dr Kristen Gorman, who shared the data is @Connors2020 @[@Satchell2009].
+In this section, we **explore** the data from package `palmerpenguins`. A recent publication from the researcher, Dr Kristen Gorman, who shared the data is @Connors2020.
+We will also use the package "citr" for refering to scientic citation as well. Howeve, please rember that "citr" is not hosted by [CRAN](https://cran.r-project.org/) but rather on [GitHub citr](https://github.com/crsh/citr). You can install it by doing `devtools::install_github("crsh/citr").`
 
 ```{r echo = FALSE}
 library(palmerpenguins)
@@ -33,13 +32,11 @@ library(tidyverse)
 
 ## Data
 
-The data are displayed below (first 10 rows) : 
-
-
+The data are displayed below (first 10 row) : 
 
 ```{r}
 penguins %>% 
-  slice(1:10) %>% # Slice as the verb say is to cut a tibble in piece, another of subsetting
+  slice(1:10) %>% # Slice as the verb say is to cut a tibble in piece, another of sub-setting
   knitr::kable() # Remember kable is the function that helps you to display table. It is built in in knitr
 ```
 
@@ -53,12 +50,26 @@ The mean of all traits that were measured on the penguins are:
 ```{r echo = FALSE}
 penguins %>% 
   group_by(species) %>% 
-  summarize(across(where(is.numeric), mean, na.rm = TRUE))
+  summarize(across(where(is.numeric), mean, na.rm = TRUE))# We use across() combined with where(is.numeric()) to only compute mean for numeric variable. na.rm=TRUE removes any missing values NA prior to computing.
 ```
 
-Inline code is powerful because, when the dataset chages or the number of obsevation changes, this will automatically be detected and updated.
+Inline code is powerful because, when the data set changes or the number of observations changes, this will automatically be detected and updated.
 You remember there were missing values for some individuals for the sex?
-We can now change ...
+We can now change change the inline code to only render the individual with know sex.
+
+```{r}
+dat <- penguins %>%
+# filter out missing sex
+  filter(!is.na(sex)) %>% 
+# select variables
+  select(species, island, bill_length_mm, body_mass_g) 
+
+glimpse(dat)
+
+```
+
+Here we will make use of *inline code* but on the dataset dat which contains no missing vavlues. 
+There are `r nrow(dat)` penguins in the dataset, and `r length(unique(dat$species))` different species. The data were collected in `r length(unique(dat$island))` islands of the Palmer archipelago in Antarctica. 
 
 ## Graphical exploration
 
@@ -77,6 +88,7 @@ penguins %>%
        title = "Penguin body mass")
 ```
 
+If you want to know more about reference citing withing RMarkdown please [click here](https://data-lessons.github.io/literate-programming-r-demo/04-bibliographic-citations/)
 
 ## The end
 

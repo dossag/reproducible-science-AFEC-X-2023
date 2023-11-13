@@ -2,4 +2,4 @@
 This repository holds the source materials used at 
 https://dossag.github.io/reproducible-science-afec-x-2023
 
-We want to usderstand git pull
+We want to understand git pull
