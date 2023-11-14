@@ -3,3 +3,4 @@
 #' subsequent analysis
 whales <- read.csv(file = '../data/bbmroData.csv')
 head(whales)
+## Remember your data should be in subfolder data, data/bbmroData.csv

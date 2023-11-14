@@ -1,0 +1,20 @@
+---
+title: "Checking reproducibility of a third scientist"
+author: "Gbadamassi G.O. Dossa"
+date: "Updated on `r Sys.Date()` (created on 2022-06-20)"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Tasks to perform
+
+1- First case no RMarkdown available. You are asked to clone the clone the repository called *Mengsong-fungal-succession-on-woody-debris_SBB* on [Dossa's Github](https://github.com/dossag/Mengsong-fungal-succession-on-woody-debris_SBB) and run all the analyses to check whether the figures that are produced and the same as the one in the published article [Dossa et al 2021](https://www.sciencedirect.com/science/article/pii/S0038071721000146). You can download Dossa et al 2021 article for free.  
+
+2- Second case RMarkdown is available. You are asked to get the materials that [Njoroge et al 2022](https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/1365-2745.13829) made available for this article. After, this try to put these materials in your directory and try to run the RMarkdown. Please check whether the results (Figures mainly) are the same as the ones in the published articles.
+
+Please not that you might need to download some r packages if those were not installed earlier in your computer.
+
+Enjoy your hard work

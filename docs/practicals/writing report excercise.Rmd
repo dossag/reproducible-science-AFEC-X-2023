@@ -1,7 +1,7 @@
 ---
-title: "writing report exercise"
+title: "Writing report exercise"
 author: "Gbadamassi G.O. Dossa"
-date: '2022-06-30'
+date: "Updated on `r Sys.Date()` (created on 2022-06-20)"
 output: html_document
 ---
 
@@ -11,6 +11,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Tasks to perform
 
-You are asked to open the book on writing [R progrmming for data science book](https://leanpub.com/rprogramming) by [Dr Peng's](https://rdpeng.org/), then created  an R markdown file, give a name and save the file.
-Please focus on the chapters 6 and 7 of the book and follow the outline that includes as headers the following to build up you file. Scientific question, Data analysis, Splitting the Dataset, Exploratory Data Analysis, Statistical Modeling, Interpreting Results,Challenge the Findings, Synthesizing Results. Make sure you respect the level of the headers and create a code chunk when computations happened.
-Where, the author mentioned about the data available to use please use an hyperlink to link that data to the package mentioned in the book.
+You are asked to open the book on writing [R progrmming for data science book](https://leanpub.com/rprogramming) by [Dr Peng's](https://rdpeng.org/), then create  an R markdown file, give a name and save the file.
+Please focus on the chapters 6 and 7 of the book and follow an outline that includes as headers: 
+Scientific question, Data analysis, Splitting the Dataset, Exploratory Data Analysis, Statistical **Modeling**, **Interpreting Results**, **Challenge the Findings**, **Synthesizing Results**. Make sure you respect the level of the headers as in the book (e.g., put what is first level header to be first level headers, and so on) and create a code chunk when computations happened or are needed. Where the author mentioned about the data available to use please use an hyperlink to link that data to the package mentioned in the book.
+Please add an extra section to your document that contains a final quote, you remembered the one your group provided at the start of this course. When you quote you need to provide citations. So you need to get the (.bib) of the article you read the first day. You also need to look for the citation format of *Ecology* (Tip make a google search a .csl for Ecology and save that to **Ecology_citation_style.csl**). In the same  section, please add a table which contains the columns that give information about your group member names, their sex, their age, email and their current job/position and their current affiliation.
+Please include your own photo as big size format and your institute logo as small size (Relatively smaller than the size of your photo.)
+
+You then need to build up you file.
+Enjoy your hard work
